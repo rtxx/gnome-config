@@ -5,8 +5,6 @@
 - Fonts - Open Sans - https://fonts.google.com/specimen/Open+Sans
 - Icons - Darkine - https://store.kde.org/p/1304954
 
-Install all widgets 1st, then upload the latte file.
-
 ### Widgets
 ##### Latte Dock Widgets - In Order
 - Application Launcher - Default Widget
