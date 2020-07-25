@@ -41,9 +41,8 @@ Optional: install oh my zsh https://github.com/ohmyzsh/ohmyzsh
 ### Default terminal
 Add/change /etc/environment var TERMINAL=kitty
 
-`sudo echo "TERMINAL=kitty" >> /etc/environment
-
-sudo nano /etc/environment`
+`sudo echo "TERMINAL=kitty" >> /etc/environment`
+`sudo nano /etc/environment`
 
 ### i3 config files ##
 ~/.config/i3
