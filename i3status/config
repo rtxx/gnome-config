@@ -1,0 +1,72 @@
+general {
+        interval = 5
+	    output_format = "i3bar"
+	    colors = true
+	    color_good = "#A3BE8C"
+	    color_degraded = "#EBCB8B"
+	    color_bad = "#BF616A"
+}
+memory {
+        format = " %used/%total"
+}
+
+load {
+    format = "%5min"
+}
+
+battery 0 {
+    threshold_type = "time"
+    integer_battery_capacity = "true"
+    low_threshold = "15"
+    format = "%percentage"
+}
+disk /home {
+    format = "~ %free"
+}
+
+ethernet enp0s25 {
+    format_up = "E: %ip"
+    format_down = ""
+}
+
+volume master {
+    device = "default"
+    mixer_idx = "0"
+    mixer = "Master"
+    format = "♪: %volume"
+}
+
+disk / {
+    format = "/ %free"
+}
+
+cpu_temperature 0 {
+    path = "/sys/class/thermal/thermal_zone0/temp"
+    format = "%degrees°C"
+}
+cpu_temperature 1 {
+    path = "/sys/class/thermal/thermal_zone1/temp"
+    format = "%degrees°C"
+}
+
+wireless wlp3s0 {
+    format_up = "W: %ip"
+    format_down = ""
+}
+
+
+time {
+    format = "%d/%m/%y %H:%M:%S"
+}
+
+order += "load"
+order += "cpu_temperature 0"
+order += "cpu_temperature 1"
+order += "memory"
+order += "disk /home"
+order += "disk /"
+order += "wireless wlp3s0"
+order += "ethernet enp0s25"
+order += "volume master"
+order += "battery 0"
+order += "time"
