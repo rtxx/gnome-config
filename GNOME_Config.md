@@ -89,6 +89,8 @@ Icons: Papirus Dark
 
 ### MangoHUD
 https://github.com/flightlessmango/MangoHud
+### Install
+`pamac install mangohud`
 
 #### Test DXVK and MandoHUD
 `mangohud glxgears`
