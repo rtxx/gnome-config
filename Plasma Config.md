@@ -1,9 +1,9 @@
-KDE Plasma Configs
+# KDE Plasma Configs
 
-Plasma Style - Breeze
-Colors - McMojaveLight - https://store.kde.org/p/1305007
-Fonts - Open Sans - https://fonts.google.com/specimen/Open+Sans
-Icons - Darkine - https://store.kde.org/p/1304954
+- Plasma Style - Breeze
+- Colors - McMojaveLight - https://store.kde.org/p/1305007
+- Fonts - Open Sans - https://fonts.google.com/specimen/Open+Sans
+- Icons - Darkine - https://store.kde.org/p/1304954
 
 Install all widgets 1st, then upload the latte file.
 
