@@ -1,8 +1,8 @@
 # linux-config 
 My Linux configuration and help files.
 
-[Command Cheat Sheet](Cheat Sheet.md)
+[Command Cheat Sheet](Cheat_Sheet.md)
 
-[GNOME, i3, Lutris Configs](GNOME Config.md)
+[GNOME, i3, Lutris Configs](GNOME_Config.md)
 
-[PLasma Config](Plasma Config.md)
+[Plasma Config](Plasma_Config.md)
