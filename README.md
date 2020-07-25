@@ -1,5 +1,5 @@
 # gnome-config 
-My Manjaro GNOME configuration 
+My Manjaro GNOME configuration, the base installation is from https://manjaro.org/download/#gnome.
 
 ## Update before anything 
 `sudo pacman -Syu`
