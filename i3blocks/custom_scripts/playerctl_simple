@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-#
-# i3blocks blocklet script to monitor arch updates and aur
-current_song=$(playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium metadata --format " {{ artist }} - {{ title }}")
-echo $current_song
