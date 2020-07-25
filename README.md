@@ -45,16 +45,9 @@ Add/change /etc/environment var TERMINAL=kitty
 `sudo nano /etc/environment`
 
 ### i3 config files ##
-~/.config/i3
-	~/.config/i3/i3exit: change permission to execute
-~/.config/i3blocks
-	~/.config/i3blocks/custom_scripts: change permissions to execute
-~/.config/i3status
-~/.config/dunst
-~/.config/rofi
-~/.config/kitty
-~/.config/picom.conf
-~/.Xresources
+Clone/Download files from this repo to .config folder and .Xresources to home
+- ~/.config/i3/i3exit: Change permission to execute
+- ~/.config/i3blocks/custom_scripts: Change permissions to execute
 
 ### GTK Config ## 
 Nordic Polar Standart Buttons or Nordic Standart Buttons https://www.gnome-look.org/p/1267246/
@@ -73,12 +66,13 @@ Icons: Papirus Dark
 
 ### Enable multilib 
 `sudo nano /etc/pacman.conf`
-` --------------------------------------------------------------------------------------
-[multilib]
-Include = /etc/pacman.d/mirrorlist`
+
+`[multilib]`
+
+`Include = /etc/pacman.d/mirrorlist`
 
 ### Update ##
-sudo pacman -Syu 
+`sudo pacman -Syu`
 
 ### Drivers and DXVK Config ##
 #### Nvidia #
