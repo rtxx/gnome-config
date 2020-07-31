@@ -18,7 +18,8 @@
     - Mouse Wheel Down - `playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium previous`
 - Media Player - Defaut Widget
 - System Tray - Default Widget
-    - Spacing: Open `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml`. Search for `//Main Layout` and change spacing to 8. Save and relog. **Updates WILL break this.**
+    - Spacing (old version): Open `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml`. Search for `//Main Layout` and change spacing to 8. Save and relog. **Updates WILL break this.**
+    - Spacing: https://github.com/psifidotos/plasma-systray-Latte-Tweaks
     - Turn off Media Player and Notifications
 - Notifications - Default Widget
 - Redshift Control - https://github.com/kotelnik/plasma-applet-redshift-control OR Night Color Control - Default Widget
