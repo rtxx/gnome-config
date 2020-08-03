@@ -30,8 +30,8 @@
     - Latte Separator - https://github.com/psifidotos/applet-latte-separator/
     - Latte Spacer - https://github.com/psifidotos/applet-latte-spacer
    
-  ###
-  Disable desktop icon shadows - https://www.reddit.com/r/kde/comments/d6jfe3/any_way_to_disable_new_desktop_icon_shadows/
+  ###  Disable desktop icon shadows
+  https://www.reddit.com/r/kde/comments/d6jfe3/any_way_to_disable_new_desktop_icon_shadows/
   
   `Since there is no option, you can only remove them by changing the code. Delete line frameLoader.iconShadow = ... from the end of file FolderItemDelegate.qml; should be around line number 520. On my system, the file as at /usr/share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderItemDelegate.qml`
     
