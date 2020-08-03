@@ -46,6 +46,8 @@ Open seahorse and change the default wallet to login.
 #### Automatically unlock in SDDM+KDE
 https://en.opensuse.org/GNOME_Keyring
 
+https://forum.manjaro.org/t/automatically-unlock-gnome-keyring-on-login-kde-sddm/51016
+
 Edit `/etc/pam.d/sddm ` and the two lines:
 
 ```
