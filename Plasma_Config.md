@@ -1,12 +1,19 @@
 # KDE Plasma Configs
 
-- Plasma Style - Breeze
-- Colors - McMojaveLight - https://store.kde.org/p/1305007
-- Fonts - Open Sans - https://fonts.google.com/specimen/Open+Sans
-- Icons - Darkine - https://store.kde.org/p/1304954
+- Plasma Style 
+    - Breeze
+    - GTK Theme - Breeze Blur Blue - https://store.kde.org/p/1289302
+    - Colors - Breeze Light
+- Fonts
+    - Open Sans - https://fonts.google.com/specimen/Open+Sans
+    - IBM Plex - https://www.ibm.com/plex/
+    - Segoe UI (Optional) - Extract from Windows Install
+- Icons 
+    - Darkine - https://store.kde.org/p/1304954
+    - We10X - https://github.com/yeyushengfan258/We10X-icon-theme
 
-### Widgets
-##### Latte Dock Widgets - In Order
+### Widgets & Layout
+##### Latte Dock Widgets - In Order - MacOS Inspired
 - Application Launcher - Default Widget
 - Window Title - https://github.com/psifidotos/applet-window-title
 - Global Menu - https://github.com/psifidotos/applet-window-appmenu - Arch AUR - https://aur.archlinux.org/packages/plasma5-applets-window-appmenu/
@@ -18,8 +25,8 @@
 - Mouse Wheel Down - `playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium previous`
 - Media Player - Defaut Widget
 - System Tray - Default Widget
-- Spacing (old version): Open `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml`. Search for `//Main Layout` and change spacing to 8. Save and relog. **Updates WILL break this.**
 - Spacing: https://github.com/psifidotos/plasma-systray-Latte-Tweaks
+    - (old version): Open `/usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml`. Search for `//Main Layout` and change spacing to 8. Save and relog. **Updates WILL break this.**
 - Turn off Media Player and Notifications
 - Notifications - Default Widget
 - Redshift Control - https://github.com/kotelnik/plasma-applet-redshift-control OR Night Color Control - Default Widget
@@ -29,7 +36,14 @@
 - Use where needed
 - Latte Separator - https://github.com/psifidotos/applet-latte-separator/
 - Latte Spacer - https://github.com/psifidotos/applet-latte-spacer
-
+##### Windows Inspired
+ - Tiled Menu - https://store.kde.org/p/1160672
+ - Search - Default Widget
+ - Icons Only Task Manager - Default Widget
+ - System Tray - Default Widget with spacing from https://github.com/psifidotos/plasma-systray-Latte-Tweaks
+ - Clock - Default Widget
+ - Show Desktop - https://store.kde.org/p/1100895
+ 
 ###  Disable desktop icon shadows
 https://www.reddit.com/r/kde/comments/d6jfe3/any_way_to_disable_new_desktop_icon_shadows/
 
