@@ -59,5 +59,6 @@ session  include        common-session
 session  optional       pam_gnome_keyring.so auto_start <--
 ```
 The two lines must be inserted in the exact position. Otherwise it might not work.
+The login password **must** be the same for this to work.
 
     
