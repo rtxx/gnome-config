@@ -34,4 +34,27 @@
   https://www.reddit.com/r/kde/comments/d6jfe3/any_way_to_disable_new_desktop_icon_shadows/
   
   `Since there is no option, you can only remove them by changing the code. Delete line frameLoader.iconShadow = ... from the end of file FolderItemDelegate.qml; should be around line number 520. On my system, the file as at /usr/share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderItemDelegate.qml`
+  
+  ### Gnome Keyring
+  https://en.opensuse.org/GNOME_Keyring
+  Automatically unlock in SDDM+KDE
+
+In GDM+GNOME, when you login, GNOME Keyring is automatically unlocked. However, it doesn't do so in SDDM+KDE. When you start some GNOME or Electron application, they ask you type login password again.
+
+Here is a solution!
+
+Edit `/etc/pam.d/sddm and add pam_gnome_keyring.so`
+
+```
+#%PAM-1.0
+auth     include        common-auth
+auth     optional       pam_gnome_keyring.so
+account  include        common-account
+password include        common-password
+session  required       pam_loginuid.so
+session  include        common-session
+session  optional       pam_gnome_keyring.so auto_start
+```
+The two lines must be inserted in the exact position. Otherwise it might not work.
+
     
