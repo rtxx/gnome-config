@@ -12,8 +12,8 @@
     - Darkine - https://store.kde.org/p/1304954
     - We10X - https://github.com/yeyushengfan258/We10X-icon-theme
 
-### Widgets & Layout
-##### Latte Dock Widgets - In Order - MacOS Inspired
+## Widgets & Layout
+### Latte Dock Widgets - In Order - MacOS Inspired
 - Application Launcher - Default Widget
 - Window Title - https://github.com/psifidotos/applet-window-title
 - Global Menu - https://github.com/psifidotos/applet-window-appmenu - Arch AUR - https://aur.archlinux.org/packages/plasma5-applets-window-appmenu/
@@ -36,7 +36,7 @@
 - Use where needed
 - Latte Separator - https://github.com/psifidotos/applet-latte-separator/
 - Latte Spacer - https://github.com/psifidotos/applet-latte-spacer
-##### Windows Inspired
+### Windows Inspired
  - Tiled Menu - https://store.kde.org/p/1160672
  - Search - Default Widget
  - Icons Only Task Manager - Default Widget
@@ -49,15 +49,15 @@ https://www.reddit.com/r/kde/comments/d6jfe3/any_way_to_disable_new_desktop_icon
 
 Open `/usr/share/plasma/plasmoids/org.kde.desktopcontainment/contents/ui/FolderItemDelegate.qml`, search for `frameLoader.textShadow `, delete or add //.
 
-### Gnome Keyring
-#### Installation
+## Gnome Keyring
+### Installation
 https://wiki.archlinux.org/index.php/GNOME/Keyring
 
 `sudo pacman -S  gnome-keyring libsecret seahorse`
 
 Open seahorse and change the default wallet to login.
 
-#### Automatically unlock in SDDM+KDE
+### Automatically unlock in SDDM+KDE
 https://en.opensuse.org/GNOME_Keyring
 
 https://forum.manjaro.org/t/automatically-unlock-gnome-keyring-on-login-kde-sddm/51016
