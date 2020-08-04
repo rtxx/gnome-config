@@ -1,8 +1,10 @@
 # Linux Cheat Sheet Commands
 
 ## Files
-- `ls` - List directory contents
-- `cd [dir]` - Change the working directory to [dir]
+`ls`
+> List directory contents
+`cd [dir]`
+> Change the working directory to [dir]
 - `cd` - Change the working directory to ~
 - `cp [source] [destination]` - Copies files/folders to destination
 - `cp -rf [source] [destination]` - Recursive and forces copy
