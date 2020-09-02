@@ -33,7 +33,7 @@ Icons: Papirus Dark
 - Hiting: Slight; Antialiasing Subpixel; Scale: 1
 
 ## i3 Config 
-`sudo pacman -S i3-gaps dmenu rofi i3blocks i3status i3lock nemo lxappearance qt5ct sysstat kitty dunst picom playerctl udiskie feh nethogs volumeicon clipit unclutter ttf-opensans ttf-hack arandr neofetch zensu`
+`sudo pacman -S i3-gaps dmenu rofi i3blocks i3status i3lock nemo lxappearance qt5ct sysstat kitty dunst picom playerctl udiskie feh nethogs volumeicon clipit unclutter ttf-opensans ttf-hack arandr neofetch zensu xorg-xbacklight` 
 
 Optional: install oh my zsh https://github.com/ohmyzsh/ohmyzsh
 
