@@ -26,15 +26,15 @@ Icons: Papirus Dark
 - Pamac Updates Indicator
 
 ### Fonts ##
-- Interface Text: Open Sans 12
-- Document Text: Open Sans 12
-- Monospace Text: Hack Regular 12
-- Legacy Windows Titles: Open Sans Bold 12
+- Interface Text: Open Sans 10
+- Document Text: Open Sans 10
+- Monospace Text: Hack Regular 10
+- Legacy Windows Titles: Open Sans Bold 10
 - Hiting: Slight; Antialiasing Subpixel; Scale: 1
 
 ## i3 Config 
-`sudo pacman -S i3-gaps dmenu rofi i3blocks i3status i3lock nemo lxappearance qt5ct sysstat kitty dunst picom playerctl udiskie feh nethogs volumeicon clipit unclutter ttf-opensans ttf-hack arandr neofetch zensu xorg-xbacklight` 
-
+`sudo pacman -S i3-gaps dmenu rofi i3blocks i3status i3lock nemo lxappearance qt5ct sysstat kitty dunst picom playerctl udiskie feh nethogs volumeicon unclutter ttf-opensans ttf-hack arandr neofetch zensu xorg-xbacklight` 
+`yay -S clipit `
 Optional: install oh my zsh https://github.com/ohmyzsh/ohmyzsh
 
 ### Default terminal
