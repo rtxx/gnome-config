@@ -150,6 +150,7 @@
 	for_window [class="qt5ct"] floating enable, sticky enable, border normal
 	for_window [class="Qtconfig-qt4"] floating enable, sticky enable, border normal	
 	for_window [class="Steam"] floating enable, sticky enable, border none
+	#pip for firefox, 1920-320+8 1080-240+8 x-windowx+gap y-windowy+gap
 	for_window [title="Picture-in-Picture"] floating enable, sticky enable, border none, resize set 320 240, move absolute position 1592 832
 	
 ### i3exit menu
