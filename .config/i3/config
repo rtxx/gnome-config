@@ -133,24 +133,24 @@
 	for_window [workspace=$ws22] layout tabbed
 
 	# Open specific applications in floating mode
-	for_window [class="kittyfloat"] floating enable move absolute position center resize set 800 500
-	for_window [title="alsamixer"] floating enable border pixel 1
+	for_window [class="kittyfloat"] floating enable, resize set 800 500, move absolute position center 
+	for_window [title="alsamixer"] floating enable, border pixel 1
 	for_window [class="Clipgrab"] floating enable
 	for_window [title="File Transfer*"] floating enable
 	for_window [title="spacesu"] floating enable
-	for_window [class="Galculator"] floating enable border pixel 1
-	for_window [class="GParted"] floating enable border normal
-	for_window [title="i3_help"] floating enable sticky enable border normal
+	for_window [class="Galculator"] floating enable, border pixel 1
+	for_window [class="GParted"] floating enable, border normal
+	for_window [title="i3_help"] floating enable, sticky enable, border normal
 	for_window [class="Lightdm-settings"] floating enable
 	for_window [title="MuseScore: Play Panel"] floating enable
-	for_window [class="Nitrogen"] floating enable sticky enable border normal
+	for_window [class="Nitrogen"] floating enable, sticky enable, border normal
 	for_window [class="Oblogout"] fullscreen enable
 	for_window [class="octopi"] floating enable
 	for_window [class="Pavucontrol"] floating enable
-	for_window [class="qt5ct"] floating enable sticky enable border normal
-	for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-	#for_window [class="Skype"] floating enable border normal
-	for_window [class="TeamViewer"] floating enable border normal
+	for_window [class="qt5ct"] floating enable, sticky enable, border normal
+	for_window [class="Qtconfig-qt4"] floating enable, sticky enable, border normal	
+	for_window [class="Steam"] floating enable, sticky enable, border none
+	for_window [title="Picture-in-Picture"] floating enable, sticky enable, border none, resize set 320 240, move absolute position 1592 832
 	
 ### i3exit menu
 	# Set shut down, restart and locking features
