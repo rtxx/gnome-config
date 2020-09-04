@@ -36,6 +36,7 @@ Icons: Papirus Dark
 `sudo pacman -S i3-gaps dmenu rofi i3blocks i3status i3lock nemo lxappearance qt5ct sysstat kitty dunst picom playerctl udiskie feh nethogs volumeicon unclutter ttf-opensans ttf-hack arandr neofetch zensu xorg-xbacklight` 
 `yay -S clipit `
 Optional: install oh my zsh https://github.com/ohmyzsh/ohmyzsh
+Optional: icons sudo pacman -S arc-icon-theme moka-icon-theme
 
 ### Default terminal
 Add/change /etc/environment var TERMINAL=kitty
