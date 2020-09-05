@@ -132,6 +132,13 @@
 	assign [class="Parsec Game Window"] $ws22
 	for_window [workspace=$ws22] layout tabbed
 
+	# Dropdown
+	# https://faq.i3wm.org/question/2420/dropdown-terminal-in-i3.1.html
+	exec --no-startup-id kitty --name kittydrop
+	for_window [instance="kittydrop"] floating enable,
+	for_window [instance="kittydrop"] move scratchpad, [instance="kittydrop"] scratchpad show, move position 0 24, resize set 1920 256, move scratchpad
+	bindsym F1 [instance="kittydrop"] scratchpad show
+    
 	# Open specific applications in floating mode
 	for_window [class="kittyfloat"] floating enable, resize set 800 500, move absolute position center 
 	for_window [title="alsamixer"] floating enable, border pixel 1
