@@ -16,16 +16,36 @@
 `cp -rf [source] [destination]`
 > Recursive and forces copy
 
-- `mv [source] [destination]` - Moves files/folders to destination
-- `mv [file] [new name]` - Rename [file]
-- `rm -rf [folder]` - Force deletes [folder] and its contents
-- `rmdir [folder]` - Deletes folder
-- `ln -s [file] [link]` - Create symbolic [link] to [file]
-- `nano [file]` - Edit txt file
-- `cat [file]` - Output file content
-- `rm -rf ~/.local/share/Trash/*` - Empties trah folder. use sudo if needed
-- `tar -xvf [file]` - Extract [file]
-- `makepkg -sri` - Install package from inside the folder
+`mv [source] [destination]` 
+> Moves files/folders to destination
+
+`mv [file] [new name]`
+> Rename [file]
+
+`rm -rf [folder]`
+> Force deletes [folder] and its contents
+
+`rmdir [folder]`
+> Deletes folder
+
+`ln -s [file] [link]`
+> Create symbolic [link] to [file]
+
+`nano [file]`
+> Edit txt file
+
+`cat [file]`
+> Output file content
+
+`rm -rf ~/.local/share/Trash/*`
+> Empties trah folder. use sudo if needed
+
+`tar -xvf [file]`
+> Extract [file]
+
+`makepkg -sri`
+> Install package from inside the folder
+
 
 ## System
 - `udisksctl mount -b /dev/sd**`  - Mount partition as user
