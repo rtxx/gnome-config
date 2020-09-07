@@ -1,0 +1,23 @@
+#Pacman Alias
+#alias sysupd='sudo pacman -Sy'
+alias sysupg='sudo pacman -Syu'
+alias pacman-autoremove='sudo pacman -R $(pacman -Qdtq)'
+
+#Power
+alias qqq='poweroff'
+alias sleep='systemctl suspend'
+
+#Misc
+alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias youtube-dl-playlist='youtube-dl -i --extract-audio --audio-format mp3 -o "%(title)s.%(ext)s" '
+# Create a folder and cd into it
+mkdircd ()
+{
+    mkdir -p -- "$1" &&
+    cd -P -- "$1"
+}
+
+#Bash
+#alias sudo='sudo '
+alias pls='sudo $(fc -ln -1)'
+alias reloadsh='source ~/.bashrc'
