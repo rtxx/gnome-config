@@ -7,9 +7,15 @@
 `cd [dir]`
 > Change the working directory to [dir]
 
-- `cd` - Change the working directory to ~
-- `cp [source] [destination]` - Copies files/folders to destination
-- `cp -rf [source] [destination]` - Recursive and forces copy
+`cd` 
+> Change the working directory to ~
+
+`cp [source] [destination]` 
+> Copies files/folders to destination
+
+`cp -rf [source] [destination]`
+> Recursive and forces copy
+
 - `mv [source] [destination]` - Moves files/folders to destination
 - `mv [file] [new name]` - Rename [file]
 - `rm -rf [folder]` - Force deletes [folder] and its contents
