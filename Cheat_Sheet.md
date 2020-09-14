@@ -108,3 +108,7 @@
 ## pkcon
 - pkcon refresh - Checks for updates
 - pkcon update - Apply pending updates
+
+sound loopbak
+pactl load-module module-loopback latency_msec=1
+to stop : pactl unload-module module-loopback
