@@ -70,7 +70,7 @@ fi
 echo "Done."
 exit
 ```
-open terminal and chmod +x ~/Applications/UnityEditor.sh
+
 ```
 sudo chmod +x ~/Applications/UnityEditor.sh
 ```
