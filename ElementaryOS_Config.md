@@ -3,8 +3,9 @@ Elementary OS Configuration
 Stuff to do after install
 
 Update
-
+```
 sudo apt update && sudo apt upgrade
+```
 
 tray icons: 
 ```
@@ -14,9 +15,29 @@ tray icons:
  sudo apt-mark hold indicator-application 
  sudo reboot
 ```
- unity editor fix
- 
- add to ~/.local/share/applications/UnityEditor.desktop
+Enable tweaks 
+```
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:philip.scott/elementary-tweaks
+sudo apt install elementary-tweaks
+```
+Install appimage launcher
+```
+https://github.com/TheAssassin/AppImageLauncher/releases
+```
+Install rambox
+```
+https://rambox.pro/#ce
+```
+install unityhub
+```
+https://store.unity.com/download?ref=personal
+```
+
+unity editor fix
+```
+nano ~/.local/share/applications/UnityEditor.desktop
+```
  ```
  #!/usr/bin/env xdg-open
 [Desktop Entry]
@@ -27,7 +48,10 @@ Exec=bash -c "/home/ruitx/Applications/UnityEditor.sh"
 Name=Unity Editor - Compatibility Mode
 Comment=Compatibility mode for Unity Editor in Elementary OS
 ```
-add to ~/Applications/UnityEditor.sh
+
+```
+nano ~/Applications/UnityEditor.sh
+```
 ```
 #!/bin/sh
 # https://forum.unity.com/threads/scrolling-editor-unity-2018-2-2f1.544847/
@@ -47,6 +71,9 @@ echo "Done."
 exit
 ```
 open terminal and chmod +x ~/Applications/UnityEditor.sh
+```
+sudo chmod +x ~/Applications/UnityEditor.sh
+```
 
 
  
