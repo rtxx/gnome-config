@@ -7,17 +7,13 @@ Update
 sudo apt update && sudo apt upgrade
 
 tray icons: 
-
- wget https://github.com/Lafydev/wingpanel-indicator-ayatana/raw/master/com.github.lafydev.wingpanel-indicator-ayatana_2.0ubuntu6_amd64.deb
- 
- wget https://github.com/mdh34/elementary-indicators/releases/download/0.1/indicator-application-patched.deb
- 
- sudo dpkg -i com.github.lafydev.wingpanel-indicator-ayatana_2.0ubuntu6_amd64.deb indicator-application-patched.deb
- 
- sudo apt-mark hold indicator-application
- 
+```
+ wget https://github.com/Lafydev/wingpanel-indicator-ayatana/raw/master/com.github.lafydev.wingpanel-indicator-ayatana_2.0ubuntu6_amd64.deb 
+ wget https://github.com/mdh34/elementary-indicators/releases/download/0.1/indicator-application-patched.deb 
+ sudo dpkg -i com.github.lafydev.wingpanel-indicator-ayatana_2.0ubuntu6_amd64.deb indicator-application-patched.deb 
+ sudo apt-mark hold indicator-application 
  sudo reboot
- 
+```
  unity editor fix
  
  add to ~/.local/share/applications/UnityEditor.desktop
