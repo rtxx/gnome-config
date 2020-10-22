@@ -17,7 +17,7 @@ tray icons:
  unity editor fix
  
  add to ~/.local/share/applications/UnityEditor.desktop
- 
+ ```
  #!/usr/bin/env xdg-open
 [Desktop Entry]
 Type=Application
@@ -26,8 +26,9 @@ Icon=utilities-terminal
 Exec=bash -c "/home/ruitx/Applications/UnityEditor.sh"
 Name=Unity Editor - Compatibility Mode
 Comment=Compatibility mode for Unity Editor in Elementary OS
-
+```
 add to ~/Applications/UnityEditor.sh
+```
 #!/bin/sh
 # https://forum.unity.com/threads/scrolling-editor-unity-2018-2-2f1.544847/
 # GTK_CSD=0 GTK3_MODULES="" /path/to/Unity/Editor/Unity./Unity -projectPath /path/to/Project/File/Root
@@ -44,7 +45,7 @@ else
 fi
 echo "Done."
 exit
-
+```
 open terminal and chmod +x ~/Applications/UnityEditor.sh
 
 
