@@ -78,7 +78,7 @@ LABEL=energy
 interval=15
 
 [time]
-label=date 
+label=
 command=date '+%Y-%m-%d %H:%M' 
 interval=1
 
