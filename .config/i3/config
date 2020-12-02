@@ -8,8 +8,8 @@
 	set $browser google-chrome-stable 			# default web browser
 	set $media_player spotify 					# default media player
 	set $chat skypeforlinux 					# default chat app
-	set $wallpaper ~/Pictures/thinkpadx1.png		# wallpaper path
-	set $lockpaper ~/Pictures/thinkpadx1.png		# lock wallpaper path
+	set $wallpaper ~/Pictures/ikzW.png		# wallpaper path
+	set $lockpaper ~/Pictures/ikzW.png		# lock wallpaper path
 	# i3exit is a script from i3 manjaro, adds shutdown menu
 	set $i3exit ~/.config/i3/i3exit
 
@@ -93,7 +93,10 @@
 	bindsym $mod+Return exec i3-sensible-terminal
 
 	# Program launcher
-	bindsym $mod+Shift+d exec --no-startup-id "dmenu_run -nf '#D8DEE9' -nb '#2E3440' -sb '#D8DEE9' -sf '#2E3440' -fn 'hack-12' -p '>'"
+	#nord colors
+	#bindsym $mod+Shift+d exec --no-startup-id "dmenu_run -nf '#D8DEE9' -nb '#2E3440' -sb '#D8DEE9' -sf '#2E3440' -fn 'hack-12' -p '>'"
+	#breeze colors
+	bindsym $mod+Shift+d exec --no-startup-id "dmenu_run -nf '#EFF0F1' -nb '#475057' -sb '#EFF0F1' -sf '#475057' -fn 'hack-12' -p '>'"
 	bindsym $mod+d exec --no-startup-id rofi -show 
 	bindsym XF86Search exec --no-startup-id rofi -show 
 
@@ -326,13 +329,22 @@
 ### Theme / Colors ###
 	# Nord Theme
 	# class                 border  bground text    indicator child_border
-	client.focused          #D8DEE9 #D8DEE9 #2E3440 #D8DEE9   #D8DEE9
-	client.focused_inactive #3B4252 #3B4252 #D8DEE9 #3B4252   #3B4252
-	client.unfocused        #2E3440 #2E3440 #4C566A #2E3440   #2E3440
-	client.urgent           #BF616A #BF616A #ECEFF4 #BF616A   #BF616A
-	client.placeholder      #2E3440 #2E3440 #ECEFF4 #2E3440   #2E3440
+	#client.focused          #D8DEE9 #D8DEE9 #2E3440 #D8DEE9   #D8DEE9
+	#client.focused_inactive #3B4252 #3B4252 #D8DEE9 #3B4252   #3B4252
+	#client.unfocused        #2E3440 #2E3440 #4C566A #2E3440   #2E3440
+	#client.urgent           #BF616A #BF616A #ECEFF4 #BF616A   #BF616A
+	#client.placeholder      #2E3440 #2E3440 #ECEFF4 #2E3440   #2E3440
 
-	client.background       #2E3440
+	#client.background       #2E3440
+	# Breeze Theme
+    # class                 border  bground text    indicator child_border
+    client.focused          #475057 #475057 #EFF0F1 #475057   #285577
+    client.focused_inactive #475057 #475057 #BDC3C7 #475057   #5F676A
+    client.unfocused        #232629 #232629 #BDC3C7 #232629   #222222
+    client.urgent           #DA4453 #DA4453 #FFFFFF #DA4453   #DA4453
+    client.placeholder      #232629 #232629 #FFFFFF #232629   #232629
+
+    client.background       #EFF0F1
 
 	# Start i3bar to display a workspace bar (plus the system information i3status
 	# finds out, if available)
@@ -341,18 +353,30 @@
 	bar {
 		    status_command i3blocks
 			position top
-			mode invisible
-		 	colors {
-				background #2E3440
-				statusline #ECEFF4
-				separator  #4C566A
+			#nord colors
+		# 	colors {
+		#		background #2E3440
+		#		statusline #ECEFF4
+		#		separator  #4C566A
 
-				focused_workspace  #8FBCBB #D8DEE9 #2E3440
-				active_workspace   #3B4252 #3B4252 #D8DEE9
-				inactive_workspace #2E3440 #2E3440 #4C566A
-				urgent_workspace   #BF616A #BF616A #ECEFF4
-				binding_mode       #BF616A #BF616A #ECEFF4
-		  }
+		#		focused_workspace  #8FBCBB #D8DEE9 #2E3440
+		#		active_workspace   #3B4252 #3B4252 #D8DEE9
+		#		inactive_workspace #2E3440 #2E3440 #4C566A
+		#		urgent_workspace   #BF616A #BF616A #ECEFF4
+		#		binding_mode       #BF616A #BF616A #ECEFF4
+		#  }
+		  #breeze colors
+            colors {
+                background #475057
+                statusline #EFF0F1
+                separator  #BDC3C7
+
+                focused_workspace  #3DAEE9 #475057 #FFFFFF
+                active_workspace   #475057 #475057 #EFF0F1
+                inactive_workspace #475057 #475057 #7F8C8D
+                urgent_workspace   #2F343A #DA4453 #FFFFFF
+                binding_mode       #2F343A #DA4453 #FFFFFF
+              }
 	}
   
 #############################
@@ -361,7 +385,7 @@
 
 # Set inner/outer gaps
 gaps inner 8
-gaps outer -4
+gaps outer 1
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -373,7 +397,8 @@ smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
-smart_borders on
+smart_borders no_gaps
+border_radius 4
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -411,3 +436,22 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+# Plasma compatibility improvements
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+
+for_window [class="yakuake"] floating enable
+for_window [class="systemsettings"] floating enable
+for_window [class="plasmashell"] floating enable;
+for_window [class="Plasma"] floating enable; border none
+for_window [title="plasma-desktop"] floating enable; border none
+for_window [title="win7"] floating enable; border none
+for_window [class="krunner"] floating enable; border none
+for_window [class="Kmix"] floating enable; border none
+for_window [class="Klipper"] floating enable; border none
+for_window [class="Plasmoidviewer"] floating enable; border none
+for_window [class="(?i)*nextcloud*"] floating disable
+for_window [class="plasmashell" window_type="notification"] border none, move right 700px, move down 450px
+no_focus [class="plasmashell" window_type="notification"]
+for_window [title="Desktop — Plasma"] kill; floating enable; border none
