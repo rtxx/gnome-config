@@ -1,6 +1,6 @@
 configuration {
 	modi: "combi,window,ssh,drun";
-	font: "hack 10";
+	font: "Inconsolata 12";
 	combi-modi: "window,drun";
 	location: 0;
 	width: 50;
@@ -9,12 +9,12 @@ configuration {
  
  /* based on https://github.com/devdevdevdevdeo/dotfiles/blob/master/custom-nord.rasi*/
  * {
-    backgroundcolor: #2E3440;
+    backgroundcolor: #475057;
     bg1: #3B4252;
-    backgroundcoloralternate: #2E3440;
+    backgroundcoloralternate: #475057;
     separatorcolor: #3B4252;
     scrollbarcolor: #3B4252;
-    foregroundcolor: #8FBCBB;
+    foregroundcolor: #3daee9;
     foregroundcolorinverse: #D8DEE9;
     selectioncolor: #3B4252;
 
