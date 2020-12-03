@@ -11,6 +11,10 @@
 separator=true
 separator_block_width=16
 
+[window-title]
+command=xtitle
+interval=1
+
 [mediaplayer]
 label=
 command=playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium metadata --format " {{ artist }} - {{ title }}"
