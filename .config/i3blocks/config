@@ -8,7 +8,7 @@
 
 # Global properties
 #SCRIPT_DIR=~/.config/i3blocks/custom_script
-separator=true
+separator=false
 separator_block_width=16
 
 [window-title]
@@ -16,7 +16,7 @@ command=xtitle
 interval=1
 
 [mediaplayer]
-label=
+label= 
 command=playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium metadata --format " {{ artist }} - {{ title }}"
 interval=5
 signal=10
@@ -24,7 +24,7 @@ signal=10
 [cpu_usage]
 command=~/.config/i3blocks/custom_scripts/cpu_usage
 interval=5
-LABEL=cpu 
+LABEL=🖥️ cpu 
 #min_width=CPU: 100.00%
 T_WARN=80
 T_CRIT=95
@@ -32,14 +32,14 @@ DECIMALS=0
 
 [temperature]
 command=~/.config/i3blocks/custom_scripts/temperature
-label=temps 
+label=🌡️ temps 
 interval=10
 T_WARN=70
 T_CRIT=90
 
 [memory]
 command=~/.config/i3blocks/custom_scripts/memory
-label=ram 
+label=🐏 ram   
 interval=5
 
 [memory]
@@ -49,7 +49,7 @@ interval=30
 
 [disk]
 command=~/.config/i3blocks/custom_scripts/disk
-LABEL=ssd  / 
+LABEL=💾 ssd  / 
 DIR=/
 #ALERT_LOW=10
 interval=30
@@ -65,11 +65,11 @@ interval=30
 command=~/.config/i3blocks/custom_scripts/bandwidth3
 interval=persist
 #markup=pango
-LABEL=network 
+LABEL=🖧 network 
 
 [volume]
 command=~/.config/i3blocks/custom_scripts/volume
-LABEL=sound 
+LABEL=🔈 sound  
 interval=5
 #signal=10
 #STEP=5%
@@ -78,11 +78,11 @@ interval=5
 
 [battery]
 command=~/.config/i3blocks/custom_scripts/battery
-LABEL=energy 
+LABEL=⚡ energy  
 interval=15
 
 [time]
-label=
+label=📅 date 
 command=date '+%Y-%m-%d %H:%M' 
 interval=1
 
