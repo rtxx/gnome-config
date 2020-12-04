@@ -14,9 +14,10 @@ separator_block_width=16
 [window-title]
 command=xtitle
 interval=1
+label=
 
 [mediaplayer]
-label= 
+label=🎵 
 command=playerctl --player=elisa,spotify,de.haeckerfelix.Shortwave,vlc,chromium metadata --format " {{ artist }} - {{ title }}"
 interval=5
 signal=10
@@ -24,7 +25,7 @@ signal=10
 [cpu_usage]
 command=~/.config/i3blocks/custom_scripts/cpu_usage
 interval=5
-LABEL=🖥️ cpu 
+LABEL=🖥️  
 #min_width=CPU: 100.00%
 T_WARN=80
 T_CRIT=95
@@ -32,14 +33,14 @@ DECIMALS=0
 
 [temperature]
 command=~/.config/i3blocks/custom_scripts/temperature
-label=🌡️ temps 
+label=🌡️ 
 interval=10
 T_WARN=70
 T_CRIT=90
 
 [memory]
 command=~/.config/i3blocks/custom_scripts/memory
-label=🐏 ram   
+label=🐏    
 interval=5
 
 [memory]
@@ -49,7 +50,7 @@ interval=30
 
 [disk]
 command=~/.config/i3blocks/custom_scripts/disk
-LABEL=💾 ssd  / 
+LABEL=💾  / 
 DIR=/
 #ALERT_LOW=10
 interval=30
@@ -65,11 +66,11 @@ interval=30
 command=~/.config/i3blocks/custom_scripts/bandwidth3
 interval=persist
 #markup=pango
-LABEL=🖧 network 
+LABEL=🖧  
 
 [volume]
 command=~/.config/i3blocks/custom_scripts/volume
-LABEL=🔈 sound  
+LABEL=🔈   
 interval=5
 #signal=10
 #STEP=5%
@@ -78,11 +79,11 @@ interval=5
 
 [battery]
 command=~/.config/i3blocks/custom_scripts/battery
-LABEL=⚡ energy  
+LABEL=⚡   
 interval=15
 
 [time]
-label=📅 date 
+label=📅  
 command=date '+%Y-%m-%d %H:%M' 
 interval=1
 
