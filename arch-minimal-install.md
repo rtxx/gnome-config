@@ -1,4 +1,4 @@
-# Minimal Arch install with i3
+# Minimal Arch Install
 ## General install steps
 1. Connect to the internet
 2. Create partitions and mount them
@@ -279,7 +279,7 @@ Enabling it
 ```
 systemctl enable lightdm
 ```
-Install ``` lightdm-gtk-greeter-settings``` to change appereance of it
+Install ``` lightdm-gtk-greeter-settings``` to change appearance of it
 
 ### Appearance
 Install Breeze theme - https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications
@@ -293,5 +293,4 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
    Open ```qt5ct``` and config it.
 
 * Config GTK
-
    Open ```lxappearance``` and config it.
