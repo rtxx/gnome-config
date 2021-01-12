@@ -235,3 +235,39 @@ startx
 ```
 
 #### Right now you should have a bare minimium graphic env to use
+
+### Firewall
+Install cfw with a basic config - https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
+```
+sudo pacman -S ufw
+```
+Basic config
+```
+ufw default deny && ufw allow from 192.168.0.0/24 && ufw allow Deluge && ufw limit ssh
+```
+Enable it and start it
+```
+ufw enable
+systemctl enable ufw
+systemctl start ufw
+ufw status
+```
+### Sound
+
+Installing PulseAudio with ALSA plugin - https://wiki.archlinux.org/index.php/PulseAudio
+```
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils
+```
+Check sound levels with ```alsamixer``` or install ```volumeicon``` for a tray icon
+
+### User Directories
+Install ```xdg-user-dirs```
+```
+pacman -S xdg-user-dirs
+```
+and run
+```
+xdg-user-dirs-update
+```
+to create the default directories in /home (Documents, Downloads, etc)
+
