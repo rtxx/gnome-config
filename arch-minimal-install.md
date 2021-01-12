@@ -1,97 +1,92 @@
-#Minimal Arch install with i3
-#General install steps
+# Minimal Arch install with i3
+## General install steps
+1. Connect to the internet
+2. Create partitions and mount them
+3. Install arch 
+4. Config it
 
-#1-connect to the internet
-#2-create partitions and mount them
-#3-install arch 
-#4-config it
+## Pre-Install and connect to the internet
+Load pt keyboard
+``` loadkeys pt-latin1 ```
+Wireless configuration
+```iwctl ```
+* List devices
+```device list```
+* Scan networks
+```station [device] scan```
+* Get avaiable networks
+```station [device] get-networks```
+* Connect to a networks
+```station [device] connect [SSID]```
+* Check connection
+```ping www.google.com```
 
-#PREINSTALL
+Update system clock
+```timedatectl set-ntp true```
 
-#load pt keyboard
-loadkeys pt-latin1
+## Disk partition
+My default config with 3 partitions
+Open ```cfdisk``` and create
+* boot with at least 512MB, should be /dev/sdx1
+* swap with atleast 1GB, should be /dev/sdx2
+* root with the remaining, should be /dev/sdx3
 
-#iwctl config, for wireless configs
-iwctl
-#list devices
-device list
-
-#scan networks
-station [device] scan
-
-#get avaiable networks
-station [device] get-networks
-
-#connect to a networks
-station [device] connect [SSID]
-
-#check connection
-ping www.google.com
-
-#update system clock
-timedatectl set-ntp true
-
-#PARTITION DISK
-#My default config
-#3 partitions 
-#    -boot format to ext4 /dev/sda1 with at least 512MB
-#    -swap format to swaplinux /dev/sda1
-#    -root format to ext4 /dev/sda3
-
-cfdisk and make partitions
-#format disks
-mkfs.ext4 /dev/sda1
-mkswap /dev/sda2
-mkfs.ext4 /dev/sda3
-
-#mout partitions
-mount /dev/sda3 /mnt
+Format the partitions 
+```
+mkfs.ext4 /dev/sdx1
+mkswap /dev/sdx2
+mkfs.ext4 /dev/sdx3
+``` 
+and mount them
+```
+mount /dev/sdx3 /mnt
 mkdir /mnt/{boot,home}
-mount /dev/sda1 /mnt/boot
-swapon /dev/sda2
+mount /dev/sdx1 /mnt/boot
+swapon /dev/sdx2 
+```
+Install base system and extras 
+```pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr```
 
-#Install base system and extras 
-pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr
+Install microde, choose amd: amd-ucode or intel: intel-ucode
+```pacstrap /mnt amd-ucode```
 
-#install microde amd: amd-ucode intel: intel-ucode
-pacstrap /mnt amd-ucode 
+Generate fstab
+```genfstab -U /mnt >> /mnt/etc/fstab```
 
-#Generate fstab
-genfstab -U /mnt >> /mnt/etc/fstab
+chroot into the new system
+```arch-chroot /mnt```
 
-#chroot into the new system
-arch-chroot /mnt
+Set the time zone
+```timedatectl set-timezone Europe/Lisbon```
 
-#set the time zone
-timedatectl set-timezone Europe/Lisbon
+Generate /etc/adjtime
+```hwclock --systohc```
 
-#generate /etc/adjtime
-hwclock --systohc
-
-#select locale in /etc/locale.gen (uncomment) and gen it
+Select locale in /etc/locale.gen (uncomment) and gen it
+```
 nano locale-gen
 locale-gen
+```
+Create locale.conf and set the language
+```echo "LANG=en_US.UTF-8" >> /etc/locale.conf```
 
-#create locale.conf and set the language
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+Set keyboard layout
+```echo "KEYMAP=pt-latin1" >> /etc/vconsole.conf```
 
-#set keyboard layout
-echo "KEYMAP=pt-latin1" >> /etc/vconsole.conf
+Set hostname
+```echo "archx64" >> /etc/hostname```
 
-#set hostname
-echo "archx64" >> /etc/hostname
+Config /etc/hosts
+```echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts```
 
-#config /etc/hosts
-echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts
+Update the system
+```pacman -Syu```
 
-#update system
-pacman -Syu
+Enable dhcpcd service
+```systemctl enable dhcpcd```
 
-#enable dhcpcd service
-systemctl enable dhcpcd
-
-#recreate initramfs
-mkinitcpio -P
+Recreate initramfs
+```mkinitcpio -P```
 
 #config bootloader (grub)
 #mbr
