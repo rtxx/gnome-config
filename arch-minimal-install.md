@@ -281,3 +281,17 @@ systemctl enable lightdm
 ```
 Install ``` lightdm-gtk-greeter-settings``` to change appereance of it
 
+### Appereance
+Install Breeze theme - https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications
+```
+sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
+```
+* Config QT
+```
+echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
+```
+   Open ```qt5ct``` and config it.
+
+* Config GTK
+
+   Open ```lxappearance``` and config it.
