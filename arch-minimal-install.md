@@ -175,7 +175,7 @@ sudo pacman -Syu
 
 ## Extras
 
-Enabling multilib
+### Enabling multilib
 ```
 sudo nano /etc/pacman.conf
 ``` 
@@ -184,7 +184,7 @@ and uncomment
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
-X install
+### X install
 ```
 sudo pacman -S xorg-server
 ```
@@ -193,14 +193,14 @@ or install xorg group with a couple of extras
 sudo pacman -S xorg xorg-xinit
 ```
 
-Installing drivers, check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
+### Installing drivers 
 
-Example: Intel
+Check https://wiki.archlinux.org/index.php/Xorg#Driver_installation. Example: Intel
 ```
 sudo pacman -S xf86-video-intel mesa lib32-mesa
 ```
 
-Desktop Env - i3 as an example
+### Desktop Env - i3
 
 Config ```.xinitrc```, from https://wiki.manjaro.org/index.php/Proper_~/.xinitrc_File
 ```
@@ -282,6 +282,7 @@ systemctl enable lightdm
 Install ``` lightdm-gtk-greeter-settings``` to change appearance of it
 
 ### Appearance
+
 Install Breeze theme - https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications
 ```
 sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
@@ -293,5 +294,4 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
    Open ```qt5ct``` and config it.
 
 * Config GTK
-
    Open ```lxappearance``` and config it.
