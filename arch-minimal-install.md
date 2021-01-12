@@ -8,6 +8,7 @@
 ## Pre-Install and connect to the internet
 Load pt keyboard
 ``` loadkeys pt-latin1 ```
+
 Wireless configuration
 ```iwctl ```
 * List devices
