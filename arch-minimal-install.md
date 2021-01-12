@@ -7,7 +7,9 @@
 
 ## Pre-Install and connect to the internet
 Load pt keyboard
-``` loadkeys pt-latin1 ```
+```
+loadkeys pt-latin1
+```
 
 Wireless configuration
 ```iwctl ```
@@ -48,7 +50,9 @@ swapon /dev/sdx2
 
 ## Install Arch
 Install base system and extras 
-```pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr```
+```
+pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr
+```
 
 Install microde, choose amd: amd-ucode or intel: intel-ucode
 ```pacstrap /mnt amd-ucode```
