@@ -176,6 +176,7 @@ sudo pacman -Syu
 ## Extras
 
 Install a graphical env
+
 Enabling multilib
 ```
 sudo nano /etc/pacman.conf
@@ -196,16 +197,19 @@ sudo pacman -S xorg xorg-xinit
 
 Installing drivers
 Check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
+
 Example: intel
 ```
 sudo pacman -S xf86-video-intel mesa lib32-mesa
 ```
 
 Desktop Env - i3 as an example
-Config ```.xinitrc```
+
+Config ```.xinitrc```, from https://wiki.manjaro.org/index.php/Proper_~/.xinitrc_File
 ```
 nano ~/.xinitrc
-
+```
+```
 #!/bin/sh
 #
 # ~/.xinitrc
