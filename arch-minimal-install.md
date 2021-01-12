@@ -44,6 +44,8 @@ mkdir /mnt/{boot,home}
 mount /dev/sdx1 /mnt/boot
 swapon /dev/sdx2 
 ```
+
+## Install Arch
 Install base system and extras 
 ```pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr```
 
@@ -88,60 +90,63 @@ Enable dhcpcd service
 Recreate initramfs
 ```mkinitcpio -P```
 
-#config bootloader (grub)
-#mbr
-grub-install --target=i386-pc /dev/sda
-#uefi
-grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=archlinux
+Config bootloader (grub)
+* MBR ```grub-install --target=i386-pc /dev/sda```
+* UEFI ```grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=archlinux```
 
-#generate main config file for grub
-grub-mkconfig -o /boot/grub/grub.cfg
+Generate main config file for grub
+```grub-mkconfig -o /boot/grub/grub.cfg```
 
-#set root password
-passwd
+Set root password
+```passwd```
 
-#exit chroot and reboot!
-exit && reboot
-#arch should now be installed, login with root
+Exit chroot and reboot!
+```exit && reboot```
 
-#install sudo
-pacman -S sudo
+#### Arch should now be installed, login with root
 
-#edit sudoers and remove the comment on %wheel
-EDITOR=nano visudo
+## Configuration of the new install
+Install sudo
+```pacman -S sudo```
 
-#create user and add them to wheel group
-useradd -m -G wheel [user]
+Edit sudoers and remove the comment on %wheel
+```EDITOR=nano visudo```
 
-#add a password to the new created user
-passwd [user]
+Create user and add them to wheel group
+```useradd -m -G wheel [user]```
 
-#exit root and login with new user
-exit
+Add a password to the new created user
+```passwd [user]```
 
-#test permissions of the new user
-sudo pacman -Syu
+Exit root and login with new user
+```exit```
 
-#Install a graphical env
-#enabling multilib
-sudo nano /etc/pacman.conf and uncomment 
+Test permissions of the new user
+```sudo pacman -Syu```
+
+## Extras
+
+Install a graphical env
+Enabling multilib
+```sudo nano /etc/pacman.conf``` and uncomment
+```
 [multilib]
 Include = /etc/pacman.d/mirrorlist
+```
+X install
+```sudo pacman -S xorg-server```
+or install xorg group with a couple of extras
+```sudo pacman -S xorg xorg-xinit```
 
-#XORG install
-sudo pacman -S xorg-server
+Installing drivers
+Check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
+Example: intel
+```sudo pacman -S xf86-video-intel mesa lib32-mesa```
 
-#or install xorg group with a couple of extras
-sudo pacman -S xorg xorg-xinit 
-
-#installing drivers
-# check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
-# example intel
-sudo pacman -S xf86-video-intel mesa lib32-mesa
-
-#Desktop Env
-#install a DE, example is i3
-#config xinitrc
+Desktop Env
+i3 as an example
+Config ```.xinitrc```
+```
 nano ~/.xinitrc
 
 #!/bin/sh
@@ -157,11 +162,11 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 exec i3
+```
+Install i3 and some extras
+```sudo pacman -S i3-wm i3status i3lock dmenu ttf-hack xterm htop```
 
-#install i3 and some extras
-sudo pacman -S i3-wm i3status i3lock dmenu ttf-hack xterm htop
+Start x server
+```startx```
 
-#start i3
-startx
-
-#right now you should have a bare minimium graphic env to use
+#### Right now you should have a bare minimium graphic env to use
