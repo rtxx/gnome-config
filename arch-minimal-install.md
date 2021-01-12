@@ -294,4 +294,5 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
    Open ```qt5ct``` and config it.
 
 * Config GTK
+
    Open ```lxappearance``` and config it.
