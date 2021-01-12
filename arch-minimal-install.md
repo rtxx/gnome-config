@@ -296,3 +296,7 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
 * Config GTK
 
    Open ```lxappearance``` and config it.
+
+Xresources - https://github.com/rtxx/linux-config/blob/master/.Xresources . Copy to ```~/.Xresources```
+
+i3 layout - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3
