@@ -175,8 +175,6 @@ sudo pacman -Syu
 
 ## Extras
 
-Install a graphical env
-
 Enabling multilib
 ```
 sudo nano /etc/pacman.conf
@@ -195,10 +193,9 @@ or install xorg group with a couple of extras
 sudo pacman -S xorg xorg-xinit
 ```
 
-Installing drivers
-Check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
+Installing drivers, check https://wiki.archlinux.org/index.php/Xorg#Driver_installation 
 
-Example: intel
+Example: Intel
 ```
 sudo pacman -S xf86-video-intel mesa lib32-mesa
 ```
@@ -236,6 +233,17 @@ startx
 
 #### Right now you should have a bare minimium graphic env to use
 
+### User Directories
+Install ```xdg-user-dirs```
+```
+pacman -S xdg-user-dirs
+```
+and run
+```
+xdg-user-dirs-update
+```
+to create the default directories in /home (Documents, Downloads, etc)
+
 ### Firewall
 Install cfw with a basic config - https://wiki.archlinux.org/index.php/Uncomplicated_Firewall
 ```
@@ -256,18 +264,20 @@ ufw status
 
 Installing PulseAudio with ALSA plugin - https://wiki.archlinux.org/index.php/PulseAudio
 ```
-sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils
+sudo pacman -S pulseaudio pulseaudio-alsa alsa-utils pavucontrol
 ```
-Check sound levels with ```alsamixer``` or install ```volumeicon``` for a tray icon
+Check sound levels with ```alsamixer``` or ```pavucontrol``` install ```volumeicon``` for a tray icon
+If ```paucontrol``` wont work, reboot and check again, if still the same, open as user (not root) and check it.
 
-### User Directories
-Install ```xdg-user-dirs```
+### Display Manager
+
+Installing LightDM - https://wiki.archlinux.org/index.php/LightDM
 ```
-pacman -S xdg-user-dirs
+sudo pacman -S lightdm lightdm-gtk-greeter
 ```
-and run
+Enabling it
 ```
-xdg-user-dirs-update
+systemctl enable lightdm
 ```
-to create the default directories in /home (Documents, Downloads, etc)
+Install ``` lightdm-gtk-greeter-settings``` to change appereance of it
 
