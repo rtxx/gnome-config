@@ -173,6 +173,8 @@ Test permissions of the new user
 sudo pacman -Syu
 ```
 
+#### At this point, arch is installed and ready to use, although it is very *very* bare bones. Highly recommended installing atleast a firewall and a WM, like i3.
+
 ## Extras
 
 ### Enabling multilib
@@ -184,7 +186,7 @@ and uncomment
 [multilib]
 Include = /etc/pacman.d/mirrorlist
 ```
-### X install
+### Installing X - https://wiki.archlinux.org/index.php/Xorg
 ```
 sudo pacman -S xorg-server
 ```
@@ -223,7 +225,7 @@ exec i3
 ```
 Install i3 and some extras
 ```
-sudo pacman -S i3-wm i3status i3lock dmenu noto-fonts ttf-fantasque-sans-mono xterm htop
+sudo pacman -S i3-wm i3status i3lock dmenu ttf-opensans noto-fonts ttf-fantasque-sans-mono xterm htop
 ```
 Optional: i3 layout based on manjaro i3 - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3.
 Warning! If this layout is used, there's a bunch of programs not installed yet.
