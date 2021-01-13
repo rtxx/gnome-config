@@ -225,6 +225,9 @@ Install i3 and some extras
 ```
 sudo pacman -S i3-wm i3status i3lock dmenu noto-fonts ttf-fantasque-sans-mono xterm htop
 ```
+Optional: i3 layout based on manjaro i3 - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3.
+Warning! If this layout is used, there's a bunch of programs not installed yet.
+
 
 Start x server
 ```
@@ -299,8 +302,6 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
 
 Xresources - https://github.com/rtxx/linux-config/blob/master/.Xresources . Copy to ```~/.Xresources```
 
-i3 layout - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3
-
 
 Alternative theme - Materia - https://github.com/nana-4/materia-theme
 ```
@@ -319,6 +320,9 @@ sudo pacman -S kvantum kvantum-theme-materia capitaine-cursors arc-icon-theme lx
 * Config Kvantum
 
    Open ```kvantummanager``` and change theme.
+   
+Xresources - Monokai colors - https://github.com/logico-dev/Xresources-themes/blob/master/base16-monokai.Xresources . Copy to ```~/.Xresources```
+
    
 Wallpapers
 ```
