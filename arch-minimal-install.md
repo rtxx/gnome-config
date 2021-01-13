@@ -320,12 +320,13 @@ sudo pacman -S kvantum kvantum-theme-materia capitaine-cursors arc-icon-theme lx
 
    Open ```kvantummanager``` and change theme.
    
-Wallppapers
+Wallpapers
 ```
 sudo pacman -S archlinux-wallpapers
 ```
 Wallpapers are located in ```/usr/share/backgrounds/archlinux/```
 
 Fonts
+
 Open ```lxappearance``` and ```qt5ct``` change to ```Noto Sans Regular``` ```Fantasque Sans Mono```
 
