@@ -223,7 +223,7 @@ exec i3
 ```
 Install i3 and some extras
 ```
-sudo pacman -S i3-wm i3status i3lock dmenu ttf-hack xterm htop
+sudo pacman -S i3-wm i3status i3lock dmenu noto-fonts ttf-fantasque-sans-mono xterm htop
 ```
 
 Start x server
@@ -291,12 +291,41 @@ sudo pacman -S breeze breeze-gtk breeze-icons qt5ct lxappearance
    ```
    echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
    ```
-   Open ```qt5ct``` and config it.
+   Open ```qt5ct``` and change theme to "breeze" and icons.
 
 * Config GTK
 
-   Open ```lxappearance``` and config it.
+   Open ```lxappearance``` and change theme and icons.
 
 Xresources - https://github.com/rtxx/linux-config/blob/master/.Xresources . Copy to ```~/.Xresources```
 
 i3 layout - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3
+
+
+Alternative theme - Materia - https://github.com/nana-4/materia-theme
+```
+sudo pacman -S kvantum kvantum-theme-materia capitaine-cursors arc-icon-theme lxappearance
+```
+* Config QT
+   ```
+   echo "QT_QPA_PLATFORMTHEME=qt5ct" >> /etc/environment
+   ```
+   Open ```qt5ct``` and change theme to "kvantum" and icons.
+
+* Config GTK
+
+   Open ```lxappearance``` and change theme and icons.
+   
+* Config Kvantum
+
+   Open ```kvantummanager``` and change theme.
+   
+Wallppapers
+```
+sudo pacman -S archlinux-wallpapers
+```
+Wallpapers are located in ```/usr/share/backgrounds/archlinux/```
+
+Fonts
+Open ```lxappearance``` and ```qt5ct``` change to ```Noto Sans Regular``` ```Fantasque Sans Mono```
+
