@@ -152,11 +152,14 @@ Edit sudoers and remove the comment on %wheel
 ```
 EDITOR=nano visudo
 ```
-
 Create user and add them to wheel group
 ```
 useradd -m -G wheel [user]
 ```
+https://wiki.archlinux.org/index.php/sudo#Example_entries
+
+Tip: When creating new administrators, it is often desirable to enable sudo access for the wheel group and add the user to it, since by default Polkit treats the members of the wheel group as administrators. If the user is not a member of wheel, software using Polkit may ask to authenticate using the root password instead of the user password.
+
 
 Add a password to the new created user
 ```
