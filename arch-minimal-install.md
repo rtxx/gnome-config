@@ -13,7 +13,7 @@
 
    Installing arch using ```pacstrap```
 
-   Config ```fstab timezone locale-gen keyboard layout hostname hosts dhcpcd initramfs grub```
+   Config ```fstab timezone locale-gen keyboard-layout hostname hosts dhcpcd initramfs grub```
 
 4. Config it
 
@@ -115,12 +115,12 @@ echo "archx64" >> /etc/hostname
 
 Config /etc/hosts
 ```
+127.0.0.1    localhost
+::1          localhost
+127.0.1.1    archx64.localdomain     archx64
+```
+```
 echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts
-```
-
-Update the system
-```
-pacman -Syu
 ```
 
 Enable dhcpcd service
