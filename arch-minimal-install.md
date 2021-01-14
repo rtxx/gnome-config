@@ -392,7 +392,9 @@ Without a DM, using ```.xinitrc```
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 ```
->Using a DM, like LightDM, it should be automatic. However if it is not unlocked on login, open ```seahorse```, create a new *keyring* with the name ```login``` and the password should be the *same* as the current user.
+With a DM, like LightDM
+
+It should be automatic. However if it is not unlocked on login, open ```seahorse```, create a new *keyring* with the name ```login``` and the password should be the *same* as the current user.
 
 To enable the keyring for terminal applications update ```.bash_profile``` with
 ```
