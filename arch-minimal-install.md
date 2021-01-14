@@ -308,7 +308,7 @@ sudo pacman -S ufw
 ```
 Basic config
 ```
-ufw default deny && ufw allow from 192.168.0.0/24 && ufw allow Deluge && ufw limit ssh
+ufw default deny && ufw allow from 192.168.0.0/24 && ufw limit ssh
 ```
 Enable it and start it
 ```
