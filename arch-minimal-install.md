@@ -342,6 +342,35 @@ systemctl enable lightdm
 ```
 Install ``` lightdm-gtk-greeter-settings``` to change appearance of it
 
+### Keyring - Manage passwords
+
+Installing GNOME Keyring to manage passwords from programs, wifi keys, ssh, etc. - https://wiki.archlinux.org/index.php/GNOME/Keyring
+```
+sudo pacman -S gnome-keyring
+```
+For GUI, install ```seahorse```
+```
+sudo pacman -S seahorse
+```
+Auto unlock keyring
+
+Without a DM, using .xinitrc
+```
+~/.xinitrc
+```
+```
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+```
+Using a DM, like LightDM, it should be automatic. However if it is not unlocked on login, open ```seahorse```, create a new *keyring* with the name ```login``` and the password should be the *same* as the current user.
+
+To enable the keyring for terminal applications update ```.bash_profile``` with
+```
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+```
 ### Appearance
 
 Install Breeze theme - https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications
