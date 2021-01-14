@@ -210,7 +210,7 @@ EDITOR=nano visudo
 useradd -m -G wheel [user]
 ```
 
-Add a password to the new created user
+#### Add a password to the new created user
 ```
 passwd [user]
 ```
