@@ -1,8 +1,20 @@
 # Minimal Arch Install
 ## General install steps
 1. Connect to the internet
+
+    Connecting to a network with ```iwcl``` or wired connecting
+   
+    Update system clock 
 2. Create partitions and mount them
-3. Install arch 
+
+   Creating partitions using ```cfdisk```, format and mount
+  
+3. Install arch
+
+   Installing arch using ```pacstrap```
+
+   Config ```fstab timezone locale-gen keyboard layout hostname hosts dhcpcd initramfs grub```
+
 4. Config it
 
 ## Pre-Install and connect to the internet
