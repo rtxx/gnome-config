@@ -436,10 +436,11 @@ sudo pacman -S kvantum kvantum-theme-materia materia-gtk-theme capitaine-cursors
 * Config GTK
 
    Open ```lxappearance``` and change theme and icons.
-   
+
 * Config Kvantum
 
    Open ```kvantummanager``` and change theme.
+   >Kvantum (kvantum-qt5) is customizable SVG-based theme engine for Qt5 that comes with a variety of built-in styles, including versions of some of popular GTK themes such as Adapta, Arc, Ambiance, Materia.
    
 Xresources - Monokai colors - https://github.com/logico-dev/Xresources-themes/blob/master/base16-monokai.Xresources . Copy to ```~/.Xresources```
 
