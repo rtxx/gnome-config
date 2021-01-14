@@ -142,10 +142,10 @@ exit && reboot
 
 #### Arch should now be installed, login with root
 
-## Configuration of the new install
-Install sudo
+## Config the new install
+Install sudo and bash completion
 ```
-pacman -S sudo
+pacman -S sudo bash-completion
 ```
 
 Edit sudoers and remove the comment on %wheel
@@ -180,7 +180,7 @@ Test permissions of the new user
 sudo pacman -Syu
 ```
 
-#### At this point, arch is installed and ready to use, although it is very *very* bare bones. Highly recommended installing atleast a firewall and a WM, like i3.
+#### At this point, arch is installed and ready to use, although it is very *very* bare bones. Highly recommended installing atleast a firewall and a WM, like i3 or a DE like xfce.
 
 ## Extras
 
@@ -195,21 +195,27 @@ Include = /etc/pacman.d/mirrorlist
 ```
 ### Installing X - https://wiki.archlinux.org/index.php/Xorg
 ```
-sudo pacman -S xorg-server
+sudo pacman -S xorg-server xorg-xinit xorg-setxkbmap
 ```
 or install xorg group with a couple of extras
 ```
 sudo pacman -S xorg xorg-xinit
 ```
+Setting the keyboard layout - https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration#Setting_keyboard_layout
+```
+localectl set-x11-keymap pt
+```
 
-### Installing drivers 
+### Installing graphic drivers 
 
 Check https://wiki.archlinux.org/index.php/Xorg#Driver_installation. Example: Intel
 ```
 sudo pacman -S xf86-video-intel mesa lib32-mesa
 ```
 
-### Desktop Env - i3
+### Window Manager - i3
+
+https://wiki.archlinux.org/index.php/i3
 
 Config ```.xinitrc```, from https://wiki.manjaro.org/index.php/Proper_~/.xinitrc_File
 ```
@@ -237,13 +243,40 @@ sudo pacman -S i3-wm i3status i3lock dmenu ttf-opensans noto-fonts ttf-fantasque
 Optional: i3 layout based on manjaro i3 - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3.
 Warning! If this layout is used, there's a bunch of programs not installed yet.
 
+### Desktop Environment - xfce
+
+https://wiki.archlinux.org/index.php/Xfce
+
+Config ```.xinitrc```, from https://wiki.manjaro.org/index.php/Proper_~/.xinitrc_File
+```
+nano ~/.xinitrc
+```
+```
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+exec startxfce4
+```
+Install xfce and some extras
+```
+sudo pacman -S xfce4 xfce4-goodies noto-fonts ttf-fantasque-sans-mono htop
+```
 
 Start x server
 ```
 startx
 ```
 
-#### Right now you should have a bare minimium graphic env to use
+#### Right now you should have a bare minimium graphic environment to use. Highly recommended install a DM, like lightdm.
 
 ### User Directories
 Install ```xdg-user-dirs```
@@ -271,6 +304,10 @@ ufw enable
 systemctl enable ufw
 systemctl start ufw
 ufw status
+```
+Install gufw, GUI frontend for ufw
+```
+sudo pacman -S gufw
 ```
 ### Sound
 
@@ -314,7 +351,7 @@ Xresources - https://github.com/rtxx/linux-config/blob/master/.Xresources . Copy
 
 Alternative theme - Materia - https://github.com/nana-4/materia-theme
 ```
-sudo pacman -S kvantum kvantum-theme-materia capitaine-cursors arc-icon-theme lxappearance
+sudo pacman -S kvantum kvantum-theme-materia materia-gtk-theme capitaine-cursors arc-icon-theme lxappearance
 ```
 * Config QT
    ```
@@ -335,7 +372,7 @@ Xresources - Monokai colors - https://github.com/logico-dev/Xresources-themes/bl
    
 Wallpapers
 ```
-sudo pacman -S archlinux-wallpapers
+sudo pacman -S archlinux-wallpaper
 ```
 Wallpapers are located in ```/usr/share/backgrounds/archlinux/```
 
