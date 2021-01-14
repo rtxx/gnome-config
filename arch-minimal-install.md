@@ -63,12 +63,12 @@ swapon /dev/sdx2
 ```
 
 ## Install Arch
-Install base system and extras 
+* Install base system and extras 
 ```
 pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr os-prober
 ```
 
-Install Microcode - https://wiki.archlinux.org/index.php/Microcode
+* Install Microcode - https://wiki.archlinux.org/index.php/Microcode
 
 >Processor manufacturers release stability and security updates to the processor microcode. These updates provide bug fixes that can be critical to the stability of your system. Without them, you may experience spurious crashes or unexpected system halts that can be difficult to track down.
 
@@ -77,7 +77,7 @@ Amd: amd-ucode or Intel: intel-ucode
 pacstrap /mnt amd-ucode
 ```
 
-Generate fstab - https://wiki.archlinux.org/index.php/Fstab
+* Generate fstab - https://wiki.archlinux.org/index.php/Fstab
 
 >The fstab file can be used to define how disk partitions, various other block devices, or remote filesystems should be mounted into the filesystem.
 
@@ -85,7 +85,7 @@ Generate fstab - https://wiki.archlinux.org/index.php/Fstab
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-```chroot``` into the new system - https://wiki.archlinux.org/index.php/Chroot
+* ```chroot``` into the new system - https://wiki.archlinux.org/index.php/Chroot
 
 >A chroot is an operation that changes the apparent root directory for the current running process and their children.
 
@@ -93,12 +93,12 @@ genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 ```
 
-Set the time zone - https://wiki.archlinux.org/index.php/System_time#Time_zone
+* Set the time zone - https://wiki.archlinux.org/index.php/System_time#Time_zone
 ```
 timedatectl set-timezone Europe/Lisbon
 ```
 
-Generate /etc/adjtime - https://wiki.archlinux.org/index.php/System_time#Set_hardware_clock_from_system_clock - https://man.archlinux.org/man/hwclock.8#The_Adjtime_File
+* Generate /etc/adjtime - https://wiki.archlinux.org/index.php/System_time#Set_hardware_clock_from_system_clock - https://man.archlinux.org/man/hwclock.8#The_Adjtime_File
 
 >The following sets the hardware clock from the system clock. Additionally it updates /etc/adjtime or creates it if not present.
 
@@ -106,7 +106,7 @@ Generate /etc/adjtime - https://wiki.archlinux.org/index.php/System_time#Set_har
 hwclock --systohc
 ```
 
-Select locale in /etc/locale.gen (uncomment) and gen it
+* Select locale in /etc/locale.gen (uncomment) and gen it
 
 >Locales are used by glibc and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
@@ -116,7 +116,7 @@ nano locale-gen
 ```
 locale-gen
 ```
-Create locale.conf and set the language - https://wiki.archlinux.org/index.php/Locale#Setting_the_system_locale
+* Create locale.conf and set the language - https://wiki.archlinux.org/index.php/Locale#Setting_the_system_locale
 
 
 >To set the system locale, write the LANG variable to /etc/locale.conf, where en_US.UTF-8 belongs to the first column of an uncommented entry in /etc/locale.gen
@@ -124,12 +124,12 @@ Create locale.conf and set the language - https://wiki.archlinux.org/index.php/L
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 ```
 
-Set keyboard layout
+* Set keyboard layout
 ```
 echo "KEYMAP=pt-latin1" >> /etc/vconsole.conf
 ```
 
-Set hostname - https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
+* Set hostname - https://wiki.archlinux.org/index.php/Network_configuration#Set_the_hostname
 
 >A hostname is a unique name created to identify a machine on a network, configured in /etc/hostname
 
@@ -137,7 +137,7 @@ Set hostname - https://wiki.archlinux.org/index.php/Network_configuration#Set_th
 echo "archx64" >> /etc/hostname
 ```
 
-Config /etc/hosts - https://wiki.archlinux.org/index.php/Network_configuration#Local_hostname_resolution
+* Config /etc/hosts - https://wiki.archlinux.org/index.php/Network_configuration#Local_hostname_resolution
 ```
 127.0.0.1    localhost
 ::1          localhost
@@ -147,19 +147,19 @@ Config /etc/hosts - https://wiki.archlinux.org/index.php/Network_configuration#L
 echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts
 ```
 
-Enable dhcpcd service - https://wiki.archlinux.org/index.php/Dhcpcd
+* Enable dhcpcd service - https://wiki.archlinux.org/index.php/Dhcpcd
 
 >dhcpcd is a DHCP and DHCPv6 client
 ```
 systemctl enable dhcpcd
 ```
 
-Recreate initramfs - https://wiki.archlinux.org/index.php/Arch_boot_process#initramfs
+* Recreate initramfs - https://wiki.archlinux.org/index.php/Arch_boot_process#initramfs
 ```
 mkinitcpio -P
 ```
 
-Config bootloader - https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader
+* Config bootloader - https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader
 
 >A boot loader is a piece of software started by the firmware (BIOS or UEFI). It is responsible for loading the kernel with the wanted kernel parameters, and initial RAM disk based on configuration files. In the case of UEFI, the kernel itself can be directly launched by the UEFI using the EFI boot stub. A separate boot loader or boot manager can still be used for the purpose of editing kernel parameters before booting.
 
@@ -172,12 +172,12 @@ Generate main config file for grub
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-Set root password
+* Set root password
 ```
 passwd
 ```
 
-Exit chroot and reboot!
+* Exit chroot and reboot!
 ```
 exit && reboot
 ```
