@@ -13,7 +13,7 @@
 
    Installing arch using ```pacstrap```
 
-   Config ```fstab timezone locale-gen keyboard-layout hostname hosts networkmanager initramfs grub```
+   Config ```fstab timezone locale-gen keyboard-layout hostname hosts dhcpcd initramfs grub```
 
 4. Config it
 
@@ -65,7 +65,7 @@ swapon /dev/sdx2
 ## Install Arch
 #### Install base system and extras 
 ```
-pacstrap /mnt base linux linux-firmware nano networkmanager grub efibootmgr os-prober
+pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr os-prober
 ```
 
 #### Install Microcode - https://wiki.archlinux.org/index.php/Microcode
@@ -147,11 +147,11 @@ echo "archx64" >> /etc/hostname
 echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts
 ```
 
-#### Enable networkmanager service - https://wiki.archlinux.org/index.php/NetworkManager
+#### Enable dhcpcd service - https://wiki.archlinux.org/index.php/Dhcpcd
 
->networkmanager is a DHCP and DHCPv6 client
+>dhcpcd is a DHCP and DHCPv6 client
 ```
-systemctl enable NetworkManager.service
+systemctl enable dhcpcd
 ```
 
 #### Recreate initramfs - https://wiki.archlinux.org/index.php/Arch_boot_process#initramfs
@@ -166,6 +166,7 @@ mkinitcpio -P
 GRUB - https://wiki.archlinux.org/index.php/GRUB
 * MBR ```grub-install --target=i386-pc /dev/sdx```
 * UEFI ```grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=archlinux```
+* BIOS/GPT - https://wiki.archlinux.org/index.php/GRUB#GUID_Partition_Table_.28GPT.29_specific_instructions
 
 Generate main config file for grub
 ```
@@ -283,7 +284,7 @@ exec i3
 ```
 #### Install i3 and some extras
 ```
-sudo pacman -S i3-wm i3status i3lock dmenu noto-fonts ttf-fantasque-sans-mono xterm htop
+sudo pacman -S i3-wm i3status i3lock dmenu ttf-opensans noto-fonts ttf-fantasque-sans-mono xterm htop
 ```
 Optional: i3 layout based on manjaro i3 - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3.
 Warning! If this layout is used, there's a bunch of programs not installed yet.
@@ -312,8 +313,9 @@ exec startxfce4
 ```
 #### Install xfce and some extras
 ```
-sudo pacman -S xfce4 xfce4-goodies noto-fonts ttf-fantasque-sans-mono htop
+sudo pacman -S xfce4 xfce4-goodies noto-fonts ttf-fantasque-sans-mono htop gvfs
 ```
+> Gvfs - https://wiki.archlinux.org/index.php/File_manager_functionality
 
 #### Start X server - https://wiki.archlinux.org/index.php/Xinit
 >The xinit program allows a user to manually start an Xorg display server. The startx script is a front-end for xinit.
