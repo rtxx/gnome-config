@@ -13,7 +13,7 @@
 
    Installing arch using ```pacstrap```
 
-   Config ```fstab timezone locale-gen keyboard-layout hostname hosts dhcpcd initramfs grub```
+   Config ```fstab timezone locale-gen keyboard-layout hostname hosts networkmanager initramfs grub```
 
 4. Config it
 
@@ -65,7 +65,7 @@ swapon /dev/sdx2
 ## Install Arch
 #### Install base system and extras 
 ```
-pacstrap /mnt base linux linux-firmware nano dhcpcd grub efibootmgr os-prober
+pacstrap /mnt base linux linux-firmware nano networkmanager grub efibootmgr os-prober
 ```
 
 #### Install Microcode - https://wiki.archlinux.org/index.php/Microcode
@@ -147,11 +147,11 @@ echo "archx64" >> /etc/hostname
 echo -e "127.0.0.1	localhost\n::1		localhost\n127.0.1.1	archx64.localdomain	archx64" >> /etc/hosts
 ```
 
-#### Enable dhcpcd service - https://wiki.archlinux.org/index.php/Dhcpcd
+#### Enable networkmanager service - https://wiki.archlinux.org/index.php/networkmanager
 
->dhcpcd is a DHCP and DHCPv6 client
+>NetworkManager is a program for providing detection and configuration for systems to automatically connect to networks.
 ```
-systemctl enable dhcpcd
+systemctl enable NetworkManager.service
 ```
 
 #### Recreate initramfs - https://wiki.archlinux.org/index.php/Arch_boot_process#initramfs
@@ -284,7 +284,7 @@ exec i3
 ```
 #### Install i3 and some extras
 ```
-sudo pacman -S i3-wm i3status i3lock dmenu ttf-opensans noto-fonts ttf-fantasque-sans-mono xterm htop
+sudo pacman -S i3-wm i3status i3lock dmenu ttf-opensans noto-fonts ttf-fantasque-sans-mono xterm htop gvfs
 ```
 Optional: i3 layout based on manjaro i3 - https://github.com/rtxx/linux-config/blob/master/.config/i3/config . Copy to ~/.config/i3.
 Warning! If this layout is used, there's a bunch of programs not installed yet.
