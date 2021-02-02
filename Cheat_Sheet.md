@@ -1,5 +1,13 @@
 # Linux Cheat Sheet Commands
 
+## Mount iOS system
+
+Install ```ifuse``` (aur).
+
+To mount, check ```/etc/fuse.conf``` and uncomment ```user_allow_other``` and then mount ```ifuse -o allow_other ~/mnt```
+
+To unmount do ```fusermount -u ~/mnt```
+
 ## Files
 `ls`
 > List directory contents
