@@ -106,13 +106,16 @@ timedatectl set-timezone Europe/Lisbon
 hwclock --systohc
 ```
 
-#### Select locale in /etc/locale.gen (uncomment) and gen it
+#### Select locale
 
 >Locales are used by glibc and other locale-aware programs or libraries for rendering text, correctly displaying regional monetary values, time and date formats, alphabetic idiosyncrasies, and other locale-specific standards.
 
+Uncomment the locale needed
+
 ```
-nano locale-gen
+nano /etc/locale.gen
 ```
+Generate it
 ```
 locale-gen
 ```
